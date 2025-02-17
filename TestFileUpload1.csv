@@ -1,0 +1,175 @@
+Epic,Feature,Test Scenario,Test steps,Expected,Automation status,Comments
+DC1 platform Gen AI chatbot service,AI assist,"Verify that the AI Assist chat window opens when the any user clicks the ""AI Assist"" option in the Help section (? button) of TLM.","1. Login in DC1
+2. Navigate to TLM
+3. Click on AI Assist in Help section","The AI Assist chat window should open, displaying the chat interface for user interaction.",Not Automated,
+,,Verify that the UI of the AI Assist chat window matches the specified design guidelines.,"1. Login in DC1
+2. Navigate to TLM
+3. Click on AI Assist in Help section","The chat window's UI elements, including the header, text, text box, font, color, icons, spacing, and other design elements, should match the approved design specifications.
+https://www.figma.com/design/qSLS3mhk1aGUEj2FBDMAzA/AI-Onboarding-Chat-Bot?node-id=1259-7359&node-type=canvas&t=8VUyd9DHn7sJTuGK-0",Not Automated,
+,Chat bot response,Verify that the chatbot greets the user with a Greeting message.,"1. Login in DC1
+2. Navigate to TLM
+3. Click on AI Assist in Help section","Chatbot displays a greeting message.
+eg : How can i assit you",Not Automated,
+,,Verify chatbot responds accurately to a valid query.,"1. Open AI assist
+2. Type the valid input data, 
+eg : “How can I install my SSL certificate?”
+ into the text box of the chat window.
+3. Press ""Enter"" or click the send button to submit the query.
+4.Observe Response",Relevant answer from the Digicert knowledge base should be displayed.,Not Automated,
+,,Verify chatbot corrects grammatical errors in queries.,"Preconditions: User is logged in and chatbot is open.
+Test Steps:
+1.Type a poorly framed question (e.g., ""How instll SSL?"").
+2. Press Enter.",Chatbot corrects the question and provides an accurate response.,Not Automated,
+,,Ensure the chatbot cannot provide an answer to unrecognizable input.,"1. Type gibberish (e.g., ""asdjflkjasd?"").
+2. Press Enter.","Chatbot responds with ""I did not understand that.""",Not Automated,
+,,Ensure the chatbot provides an error response for irrelevant queries.,"1. Type an irrelevant question (e.g., ""What is the weather today?"").
+2. Press Enter.","The chatbot provides a friendly message indicating it cannot assist with that specific query, ",Not Automated,
+,Copy to clipboard,"Ensure that ""Copy Response"" button is avaialble only after receiving a complete response.","1. Type any input
+2. Press Enter/Send button
+3. Wait for complete response and observe","""Copy Response"" button should be available after receving the complete response",Not Automated,
+,,"Verify the ""Copy to Clipboard"" functionality.","Preconditions: User has received a response from the chatbot.
+Test Steps: 
+1. Click the ""Copy Response"" button.","Response is copied and a confirmation message with ""Response is copied to clipboard"" is displayed",Not Automated,
+,Feedback,Validate that feedback can be provided after receiving an answer.,"Preconditions: User has received an answer.
+Test Steps: 
+
+1. Click the thumbs up/Down button.","Thumbs up/down button should be enabled 
+""Thanks for the feedback!"" message should be shown",Not Automated,
+,,Validate feed back funtionality without internet,"Precondition: User has received an answer and is offline.
+Steps:
+1. Click on the feedback icon.
+2. Attempt to submit feedback.",A message indicates that feedback cannot be submitted due to lack of internet connection.,Not Automated,
+,,Check Feedback Storage in the system," PreCondition: User has provided feedback (positive or negative).
+Steps:
+1. After providing feedback, check the feedback history or analytics (if available).",The feedback provided by the user is recorded in the system,Not Automated,
+,Greeting message/Closing message,verify the Initial Greeting Message,"1. Start a new chat session with the chatbot.
+2. Input a greeting such as ""Hi,"" ""Hello,"" ""Hey,"" or similar variations.","The chatbot should respond with:
+“Hi, how may I help you today with Digicert TLM product and services?”",Not Automated,
+,,verify the Closing Message After Query,"1. Start a new chat session.
+2. Ask: “How do I generate a CSR?”
+3. After the chatbot provides the answer, note the closing statement.","After answering, chat bot should conclude with
+“I hope I was able to answer your queries, feel free to leave me feedback from the feedback icon.”",Not Automated,
+,,Verify multiple queries in a single statement,"1. Start a new chat session.
+2. Ask: “What are the types of certificates you offer?”
+3. Follow up with: “What is the validity period for each type?”","The chatbot greets the user, provides answers for both queries, and concludes with an appropriate message.",Not Automated,
+,,Verify Response After Extended Inactivity,"1. Start a new chat session with the chatbot and ask some questions
+2. Remain inactive for 5 minutes.
+3. Ask another question","
+Verify that the user receives a seamless response despite the period of inactivity.",Not Automated,
+,Reference,Verify that reference document Link is Available with Answer,"Precondition: User has asked a question that has an associated documentation link.
+Test Steps:
+1. Start a new chat session.
+2. Ask the question which is releated to the DC document
+eg: “How do I renew my certificate?”","The chatbot responds with the answer and At the end of the answer, it should display a reference section with the document link for reference.
+Clicking the link opens the documentation in a new tab.",Not Automated,
+,,Verify that no reference section if the question is not related to DC document,"Precondition: User has asked a question that does not have an associated documentation link.
+Test Steps:
+1. Start a new chat session.
+2. Ask the question which doesn't belongs to DC document",Chat bot responds with the answer  and without reference section displayed,Not Automated,
+,,Verify answer with Multiple reference link,"Precondition: User has asked a question that has multiple answers, each with an associated documentation link.
+Test Steps:
+1. Start a new chat session.
+2. Ask the question which has multiple reference link","The chatbot responds with vaild answer and Reference section shows multiple links.
+Clikcing on Each link opens in a new tab.",Not Automated,
+,Document update,Verify chat bot behaviour when new document is published regarding new topic,"Precondition: New documentation has been published regarding a specific topic.
+Test Steps:
+1. Start a new chat session with the chatbot.
+2. Ask a question related to the new documentation topic",The chatbot responds with the updated information from the new documentation topic,Not Automated,
+,,Verify chat bot behaviour when existing document is updated,"Precondition: Existing documentation has been updated.
+Test Steps:
+1. Start a new chat session with the chatbot.
+2. Ask a question about a topic that has updated documentation",The chatbot responds with the updated information,Not Automated,
+,,Verify chat bot behaviour when question asked from previous verion of document and not present in current ,"Precondition: Documentation has been updated with new version
+Test Steps:
+1. Start a new chat session with the chatbot.
+2.Ask the question such that the topic was present in previous version and not in current document",The chatbot should  responde with aproproate answer or should mention that content is outdated,Not Automated,
+,Customer support,Accessing Customer Support After Answer is received from chat bot,"Precondition: User has received an answer from the chatbot.
+Test Steps:
+1. Start a new chat session with the chatbot.
+2. Ask a question
+3. Click on 'Contact Support' Button",Clicking the icon provides an option to contact customer support with the email “xyz@example.com.” as shown in the Design document,Not Automated,
+,Multiple Language,Verify Chatbot Responds in User's Native Language,"
+1. Start a new chat session with the chatbot.
+2. Chat in any other language (e.g., Spanish).
+3. Ask a question in spanish or any other language ",The chatbot responds accurately in Spanish or any other language on which user is chatting,Not Automated,
+,,Verify chatbot responds with default/english langugae if the users native language is not supported,"1. Start a new chat session with the chatbot.
+2. Ask a question in language which chat bot doesn't understand",The chatbot responds in English/default indicating that the selected language is not supported:,Not Automated,
+,History & clear,validate Clearing Current Chat Conversation by clicking clear button,"Precondition: User has an active chat session with messages in the chat box.
+Test Steps:
+1. Start a new chat session and enter some text.
+2. Click the ""Clear"" button located on the left side of the chat text box.
+","The chat box is cleared, and the conversation is not saved in history.",Not Automated,
+,,Starting a New Chat After Clearing,"Precondition: User has cleared the chat conversation.
+Test Steps:
+1. Click the ""Clear"" button to clear the current conversation.
+2. Start a new chat and enter a message.
+3. Click the ""+"" button located on the left side of the chat text box.",Only the newly started conversation is saved in history.,Not Automated,
+,,"Opening a New Chat on clicking ""+"" button","Precondition: User has an active chat session.
+Test Steps:
+1. Start a new chat session and enter some text.
+2. Click the ""+"" button located on the left side of the chat text box.","The current chat is saved in history, and a new chat window opens for the user.",Not Automated,
+,,Clear and '+' Buttons Disabled When No Conversation Exists,"Precondition: User has not started any chat conversation.
+Test Steps:
+1. Open the chat interface.","The ""Clear"" and ""+"" buttons are disabled.",Not Automated,
+,,"Buttons Enabled After Starting a Conversation
+","1.Start a new chat session 
+2. Ask some questions","The ""Clear"" and ""+"" buttons are enabled after the conversation is started.",Not Automated,
+,,Verify Viewing Historical Conversations,"Precondition: User has had previous conversations with the chatbot.
+Test Steps:
+1. Start a new chat session with the chatbot.
+2. Click on the ""History"" button located at the top of the chatbot interface.
+3.Click on a specific historical conversation from the list.",A history section opens displaying a list of previous conversations. The user can click on any conversation to view the chat.,Not Automated,
+,,Verify clear history functionality,"Precondition: User has previous conversations stored in history.
+Test Steps:
+1. Start a new chat session with the chatbot.
+2. Click on the ""History"" button located at the top of the chatbot interface.
+3. Click on the ""Clear History"" option in the history section.","A confirmation prompt appears asking if the user is sure they want to clear the history. Upon confirming, the history is cleared, and the user receives a message confirming that the history has been cleared.",Not Automated,
+,,Viewing History When No Conversations Exist,"Precondition: User has not had any previous conversations with the chatbot.
+Test Steps:
+1. Click the ""Show History"" button.",A message displays in history section indicating that there is no history available.,Not Automated,
+,,Viewing Previous Conversations in History and select,"Precondition: User has previous conversations stored in history.
+Test Steps:
+1. Click the ""Show History"" button.
+2. Select a specific conversation from the history list.","The history section opens, displaying a list of previous conversations and upon  selecting any conversation it opens in the chat window.",Not Automated,
+,,Attempting to Clear History When No History Exists,"Precondition: User has no historical conversations available.
+Test Steps:
+1. Click the ""Show History"" button.
+2. Click the ""Clear All History"" option.",A message displays indicating that there is no history to clear or Clear history button should be disabled,Not Automated,
+,,Clearing Individual Conversation from History,"Precondition: User has multiple previous conversations stored in history.
+Test Steps:
+1. Click the ""Show History"" button.
+2. Click the ""Clear"" option next to a specific conversation.","A confirmation prompt appears. Upon confirming, only the selected conversation is cleared from history.",Not Automated,
+,,Closing the History Section,"Precondition: User is viewing the history section.
+Test Steps:
+1. Click the ""Show History"" button.
+2. Click the ""X"" button to close the history section.
+",The history section closes,Not Automated,
+,Stop Generating,"Ensure the ""Stop Generating"" button stops response generation effectively.","1. Open the chat AI Assit
+2.Input a Query to Initiate Response Generation
+3. Click the ""Stop Generating"" Button
+","The response generation is halted, and the UI updates accordingly.",Not Automated,
+,,Network Failure During Response Generation,"1. Open the chatbot application.
+2. Input a query 
+3. Simulate a network failure while the response is being generated.
+4. Attempt to click the ""Stop Generating"" button.
+","The chatbot should handle the network error gracefully, informing the user with appropriate message",Not Automated,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
